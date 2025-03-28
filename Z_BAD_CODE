@@ -1,0 +1,24 @@
+*&---------------------------------------------------------------------*
+*& Report Z_BAD_CODE
+*&---------------------------------------------------------------------*
+*&https://community.sap.com/t5/application-development-and-automation-blog-posts/top-10-abap-*crimes/ba-p/13157871
+*&---------------------------------------------------------------------*
+REPORT z_bad_code.
+
+DATA: lv_val TYPE i,
+      lv_count TYPE i,
+      lv_result TYPE i,
+      lv_num TYPE i.
+
+START-OF-SELECTION.
+
+  lv_count = 1.
+
+  LOOP AT it_data.
+    lv_num = it_data-num.
+    lv_val = lv_num + 10.
+    lv_result = lv_result + lv_val.
+    lv_count = lv_count + 1.
+  ENDLOOP.
+
+  WRITE: / 'Total: ', lv_result.
