@@ -1,0 +1,21 @@
+*&---------------------------------------------------------------------*
+*& Report Z_BAD_CODE_IMPROVED
+*&---------------------------------------------------------------------*
+*&https://community.sap.com/t5/application-development-and-automation-blog-posts/top-10-abap-*crimes/ba-p/13157871
+*&---------------------------------------------------------------------*
+REPORT Z_BAD_CODE_IMPROVED.
+
+DATA: lv_total TYPE i.
+
+START-OF-SELECTION.
+
+  LOOP AT it_data INTO DATA(ls_data).
+    lv_total = calculate_value( ls_data-num ).
+  ENDLOOP.
+
+  WRITE: / 'Total: ', lv_total.
+
+FORM calculate_value USING iv_num TYPE i
+                   RETURNING VALUE(rv_result) TYPE i.
+  rv_result = iv_num + 10.
+ENDFORM.
