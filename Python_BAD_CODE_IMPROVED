@@ -1,0 +1,28 @@
+def calculate_sum(a, b):
+    """Returns the result of the operation based on the sum of a and b."""
+    
+    # Check if inputs are valid
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise ValueError("Both a and b must be numbers.")
+    
+    # Simplified calculation logic
+    total = a + b
+
+    # Apply different operations based on the sum
+    if total < 10:
+        return total * 2
+    elif total > 20:
+        return total - 5
+    else:
+        return total / 2
+
+# Example usage
+x = 5
+y = 3
+result = calculate_sum(x, y)
+
+print(f"Result of calculation: {result}")
+
+# Example of useful loop (e.g., print numbers with a specific purpose)
+for i in range(5):
+    print(f"Number {i} is less than 5.")
