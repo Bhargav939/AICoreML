@@ -1,0 +1,44 @@
+public class ImprovedExample {
+
+    public static void main(String[] args) {
+        int x = 5;
+        int y = 3;
+
+        // Calculate and print result
+        int result = calculateResult(x, y);
+        System.out.println("Calculated Result: " + result);
+        
+        // Print relevant numbers (loop purpose explained)
+        printNumbersLessThanFive();
+    }
+
+    // Method to calculate the result based on some logic
+    public static int calculateResult(int a, int b) {
+        if (a > b) {
+            int total = a + b;
+            return applyOperationBasedOnTotal(total);
+        } else if (a == b) {
+            return a * 2;
+        } else {
+            return b - 3;
+        }
+    }
+
+    // Method that applies operations based on the total sum
+    public static int applyOperationBasedOnTotal(int total) {
+        if (total < 10) {
+            return total * 2;
+        } else if (total > 20) {
+            return total - 5;
+        } else {
+            return total / 2;
+        }
+    }
+
+    // Method that prints numbers less than 5
+    public static void printNumbersLessThanFive() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Number " + i + " is less than 5.");
+        }
+    }
+}
